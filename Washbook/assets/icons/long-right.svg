@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="768px" height="427px" viewBox="0 0 768 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>basic</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="basic" transform="translate(384.000000, 213.500000) scale(-1, 1) translate(-384.000000, -213.500000) " fill="#000000" fill-rule="nonzero">
+            <path d="M725.333,256.334 L145.668,256.334 L243.498,354.169 C250.908,361.834 255.475,372.289 255.475,383.81 C255.475,407.374 236.372,426.477 212.808,426.477 C201.287,426.477 190.832,421.91 183.155,414.488 L12.5,243.833 C4.809,236.095 0.055,225.43 0.055,213.655 C0.055,201.88 4.809,191.215 12.502,183.475 L183.167,12.81 C190.832,5.4 201.287,0.833 212.808,0.833 C236.372,0.833 255.475,19.936 255.475,43.5 C255.475,55.021 250.908,65.476 243.486,73.153 L145.668,171.001 L725.333,171.001 C748.897,171.001 768,190.104 768,213.668 C768,237.232 748.897,256.335 725.333,256.335 L725.333,256.334 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

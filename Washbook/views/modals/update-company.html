@@ -1,0 +1,96 @@
+            <form class="simcy-form" action="{{ url('Companies@update') }}" data-parsley-validate="" method="POST" loader="true">
+                <div class="modal-body">
+                    <p class="text-gray-500">Update company details.</p>
+                    <div class="row space-nne">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="form-label-group">
+                                    <label class="form-label">Company Name</label>
+                                </div>
+                                <input type="text" class="form-control form-control-lg" name="name" value="{{ $company->name }}" placeholder="Company Name" required="">
+                                <input type="hidden" name="companyid" value="{{ $company->id }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-label-group">
+                                    <label class="form-label">Email Address</label>
+                                </div>
+                                <input type="email" class="form-control form-control-lg" name="email" value="{{ $company->email }}" placeholder="Email Address" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-label-group">
+                                    <label class="form-label">Phone Number</label>
+                                </div>
+                                <input type="text" class="form-control form-control-lg phone-input" value="{{ $company->phone }}" placeholder="Phone Number" required="">
+                                <input class="hidden-phone" type="hidden" name="phone" value="{{ $company->phone }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Status</label>
+                                <select class="form-control form-control-lg" name="status">
+                                    <option value="Active" @if($company->status == "Active") selected @endif>Active</option>
+                                    <option value="Expired" @if($company->status == "Expired") selected @endif>Expired</option>
+                                    <option value="Inactive" @if($company->status == "Inactive") selected @endif>Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Address</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Address" name="address" value="{{ $company->address }}" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Town/City</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Town/City" name="city" value="{{ $company->city }}" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-lg">
+                                <label class="form-label">Country</label>
+                                <select class="form-control form-control-lg select2-dynamic" name="country">
+                                    @foreach($countries as $country)
+                                    <option value="{{ $country->name }}" @if($country->name == $company->country) 
+                                        selected @endif>{{ $country->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-lg">
+                                <label class="form-label">Timezone</label>
+                                <select class="form-control form-control-lg select2-dynamic" name="timezone">
+                                    @foreach($timezones as $timezone)
+                                    <option value="{{ $timezone->zone }}" @if($timezone->zone == $company->timezone) 
+                                        selected @endif>{{ $timezone->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-lg">
+                                <label class="form-label">Currency</label>
+                                <select class="form-control form-control-lg select2-dynamic" name="currency">
+                                    @foreach($currencies as $currency)
+                                    <option value="{{ $currency->code }}" @if($currency->code == $company->currency) 
+                                        selected @endif>{{ $currency->name }} ( {{ $currency->code }} )</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button class="btn btn-secondary" data-dismiss="modal"><span class="btn-svg-icon">{{ icon('close-outline') }}</span> Close</button>
+                    <button class="btn btn-primary"><span class="btn-svg-icon">{{ icon('check') }}</span> Save Changes</button>
+                </div>
+            </form>
+            <script type="text/javascript">
+                $(".select2-dynamic").select2();
+                DottedCraft.initPhoneInput();
+            </script>

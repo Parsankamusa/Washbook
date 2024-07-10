@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'DottedCraftIcons';
+  src:  url('../fonts/dottedcrafticons/DottedCraftIcons.eot?66iut5');
+  src:  url('../fonts/dottedcrafticons/DottedCraftIcons.eot?66iut5#iefix') format('embedded-opentype'),
+    url('../fonts/dottedcrafticons/DottedCraftIcons.ttf?66iut5') format('truetype'),
+    url('../fonts/dottedcrafticons/DottedCraftIcons.woff?66iut5') format('woff'),
+    url('../fonts/dottedcrafticons/DottedCraftIcons.svg?66iut5#DottedCraftIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="di-"], [class*=" di-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'DottedCraftIcons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.di-edit:before {
+  content: "\e900";
+}
+.di-card:before {
+  content: "\e901";
+}
+.di-cart:before {
+  content: "\e902";
+}
+.di-check:before {
+  content: "\e903";
+}
+.di-company:before {
+  content: "\e904";
+}
+.di-edit-attributes-svgrepo-com:before {
+  content: "\e905";
+}
+.di-eye:before {
+  content: "\e906";
+}
+.di-globe:before {
+  content: "\e907";
+}
+.di-home:before {
+  content: "\e908";
+}
+.di-layer:before {
+  content: "\e909";
+}
+.di-list:before {
+  content: "\e90a";
+}
+.di-lock:before {
+  content: "\e90b";
+}
+.di-logout:before {
+  content: "\e90c";
+}
+.di-long-left:before {
+  content: "\e90d";
+}
+.di-long-right:before {
+  content: "\e90e";
+}
+.di-more:before {
+  content: "\e90f";
+}
+.di-plus:before {
+  content: "\e910";
+}
+.di-retry:before {
+  content: "\e911";
+}
+.di-search:before {
+  content: "\e912";
+}
+.di-settings:before {
+  content: "\e913";
+}
+.di-sms:before {
+  content: "\e914";
+}
+.di-star:before {
+  content: "\e915";
+}
+.di-time:before {
+  content: "\e916";
+}
+.di-times-circle:before {
+  content: "\e917";
+}
+.di-times:before {
+  content: "\e918";
+}
+.di-trash:before {
+  content: "\e919";
+}
+.di-user:before {
+  content: "\e91a";
+}
+.di-users-plus:before {
+  content: "\e91b";
+}

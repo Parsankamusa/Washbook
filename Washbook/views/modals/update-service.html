@@ -1,0 +1,62 @@
+            <form class="simcy-form" action="{{ url('Services@update') }}" data-parsley-validate="" method="POST" loader="true">
+                <div class="modal-body">
+                    <p class="text-gray-500">Enter service details.</p>
+                    <div class="row space-nne">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Service Name</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Service Name" value="{{ $service->name }}" name="name" required="">
+                                <input type="hidden" name="serviceid" value="{{ $service->id }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Service Cost</label>
+                                <div class="input-hint">{{ currency($user->parent->currency) }}</div>
+                                <input type="number" class="form-control form-control-lg" placeholder="Service Cost" data-parsley-pattern="^[0-9]\d*(\.\d+)?$" name="cost" value="{{ $service->cost }}" step="0.01" min="0" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Service Commission <div class="icon-text text-warning" data-toggle="tooltip" title="Commission paid to employee for performing the service."><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path d="M250.26 166.05L256 288l5.73-121.95a5.74 5.74 0 00-5.79-6h0a5.74 5.74 0 00-5.68 6z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 367.91a20 20 0 1120-20 20 20 0 01-20 20z" fill="currentColor"/></svg></div></label>
+                                <div class="input-hint">{{ currency($user->parent->currency) }}</div>
+                                <input type="number" class="form-control form-control-lg" placeholder="Service Commission" data-parsley-pattern="^[0-9]\d*(\.\d+)?$" name="commission" value="{{ $service->commission }}" step="0.01" min="0">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="line-divider">
+                                <hr class="hr" />
+                            </div>
+                            <p class="text-gray-500">Select branches that will offer this service;</p>
+                        </div>
+                            @if(!empty($branches))
+                            @foreach($branches as $branch)
+                            <div class="col-md-6">
+                                <div class="craft-wrap craft-switch">
+                                    @if(in_array($branch->id, $branchids))
+                                    <input type="checkbox" name="branches[]" id="branch-update-{{ $branch->id }}" class="craft-input" value="{{ $branch->id }}" checked="">
+                                    @else
+                                    <input type="checkbox" name="branches[]" id="branch-update-{{ $branch->id }}" class="craft-input" value="{{ $branch->id }}">
+                                    @endif
+                                    <label class="craft-label" for="branch-update-{{ $branch->id }}">{{ $branch->name }}</label>
+                                </div>
+                            </div>
+                            @endforeach
+                            @else
+                            <div class="col-md-12">
+                                <div class="empty">
+                                    <img src="{{ asset('assets/images/empty.svg') }}">
+                                    <h4>No branches added yet!</h4>
+                                </div>
+                            </div>
+                            @endif
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button class="btn btn-secondary" data-dismiss="modal"><span class="btn-svg-icon">{{ icon('close-outline') }}</span> Close</button>
+                    <button class="btn btn-primary"><span class="btn-svg-icon">{{ icon('check') }}</span> Save Changes</button>
+                </div>
+            </form>
+            <script type="text/javascript">
+                $('[data-toggle="tooltip"]').tooltip();
+            </script>

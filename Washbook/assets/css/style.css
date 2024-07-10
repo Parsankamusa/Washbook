@@ -1,0 +1,21 @@
+
+
+.header-brand img {
+    min-width: 180px;
+    width: 180px;
+}
+.dropdown-toggle::after {
+    display: none;
+}
+.dropdown-menu {
+    min-width: 250px;
+    border: none;
+    box-shadow: 0 0 0 1px rgba(64,87,109,.07),0 2px 12px rgba(53,71,90,.2);;
+}
+
+@media (max-width:1100px){
+	.header-brand img {
+	    min-width: 130px;
+	    width: 130px;
+	}
+}

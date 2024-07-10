@@ -1,0 +1,54 @@
+@include('includes/auth-head')
+
+<body class="bg-white">
+    <div class="auth-content">
+
+        <div class="login-card">
+            <div class="card-logo pb-4 text-center">
+                <a href="{{ env('APP_URL') }}" class="logo-link">
+                    <img class="logo-dark" src="{{ asset('uploads/app/logo.png') }}" alt="logo-dark">
+                </a>
+            </div>
+            <div>
+                <div>
+                    <h3>Reset Password</h3>
+                    <p class="text-gray-500">Enter a new password you will be using to access your account.</p>
+                </div>
+                <form class="simcy-form" action="{{ url('Auth@reset') }}" data-parsley-validate="" method="POST" loader="true" novalidate="">
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label class="form-label" for="password">Password</label>
+                        </div>
+                        <div class="form-control-wrap">
+                            <input type="hidden" name="token" value="{{ $token }}">
+                            <input type="password" class="form-control form-control-lg" name="password" id="new-password" placeholder="Enter your password" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label class="form-label" for="password">Confirm Password</label>
+                        </div>
+                        <div class="form-control-wrap">
+                            <input type="password" class="form-control form-control-lg" name="password" id="confirm" placeholder="Confirm password"  data-parsley-required="true" data-parsley-equalto="#new-password" data-parsley-error-message="Passwords don't Match!" placeholder="Confirm Password" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Reset Password</button>
+                    </div>
+                </form>
+                <div class="text-center mt-2">
+                    <p class="text-gray-500">Return to sign in page? <a href="{{ url('Auth@get') }}" class="text-primary">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-footer">
+            <p class="text-gray-500 mb-0">© {{ date('Y') }} {{ env('APP_NAME') }} • All Rights Reserved.</p>
+        </div>
+    </div>
+
+    @include('includes/auth-scripts')
+
+</body>
+
+</html>

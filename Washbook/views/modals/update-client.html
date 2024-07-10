@@ -1,0 +1,40 @@
+            <form class="simcy-form" action="{{ url('Clients@update') }}" data-parsley-validate="" method="POST" loader="true">
+                <div class="modal-body">
+                    <p class="text-gray-500">Enter client details.</p>
+                    <div class="row space-nne">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Full Name" value="{{ $client->fullname }}" name="fullname" required="">
+                                <input type="hidden" name="clientid" value="{{ $client->id }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control form-control-lg" placeholder="Email Address" value="{{ $client->email }}" name="email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="text" class="form-control form-control-lg phone-input" value="{{ $client->phonenumber }}" placeholder="Phone Number" required>
+                                <input class="hidden-phone" type="hidden" name="phonenumber" value="{{ $client->phonenumber }}" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-label">Address</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Address" name="address" value="{{ $client->address }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button class="btn btn-secondary" data-dismiss="modal"><span class="btn-svg-icon">{{ icon('close-outline') }}</span> Close</button>
+                    <button class="btn btn-primary"><span class="btn-svg-icon">{{ icon('check') }}</span> Save Changes</button>
+                </div>
+            </form>
+            <script type="text/javascript">
+                DottedCraft.initPhoneInput();
+            </script>
